@@ -1,0 +1,1224 @@
+@import "jquery-ui"
+@import "fancybox"
+//@import "select2"
+//@import "bootstrap"
+@import "slick-less"
+
+
+
+
+@font-face
+  font-family: 'Gotham Pro Bold Italic'
+  src: url('../fonts/GothamPro-BoldItalic.eot')
+  src: local('Gotham Pro Bold Italic'), local('GothamPro-BoldItalic'), url('../fonts/GothamPro-BoldItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamPro-BoldItalic.woff') format('woff'), url('../fonts/GothamPro-BoldItalic.ttf') format('truetype')
+  font-weight: bold
+  font-style: italic
+$bold_italic: 'Gotham Pro Bold Italic'
+
+@font-face
+  font-family: 'Gotham Pro Italic'
+  src: url('../fonts/GothamPro-Italic.eot')
+  src: local('Gotham Pro Italic'), local('GothamPro-Italic'), url('../fonts/GothamPro-Italic.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamPro-Italic.woff') format('woff'), url('../fonts/GothamPro-Italic.ttf') format('truetype')
+  font-weight: normal
+  font-style: italic
+$italic: 'Gotham Pro Italic'
+
+@font-face
+  font-family: 'Gotham Pro Medium'
+  src: url('../fonts/GothamPro-Medium.eot')
+  src: local('Gotham Pro Medium'), local('GothamPro-Medium'), url('../fonts/GothamPro-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamPro-Medium.woff') format('woff'), url('../fonts/GothamPro-Medium.ttf') format('truetype')
+  font-weight: 500
+  font-style: normal
+$medium: 'Gotham Pro Medium'
+
+@font-face
+  font-family: 'Gotham Pro Black Italic'
+  src: url('../fonts/GothamPro-BlackItalic.eot')
+  src: local('Gotham Pro Black Italic'), local('GothamPro-BlackItalic'), url('../fonts/GothamPro-BlackItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamPro-BlackItalic.woff') format('woff'), url('../fonts/GothamPro-BlackItalic.ttf') format('truetype')
+  font-weight: 900
+  font-style: italic
+$black_italic:  'Gotham Pro Black Italic'
+
+@font-face
+  font-family: 'Gotham Pro Bold'
+  src: url('../fonts/GothamPro-Bold.eot')
+  src: local('Gotham Pro Bold'), local('GothamPro-Bold'), url('../fonts/GothamPro-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamPro-Bold.woff') format('woff'), url('../fonts/GothamPro-Bold.ttf') format('truetype')
+  font-weight: bold
+  font-style: normal
+$bold: 'Gotham Pro Bold'
+
+@font-face
+  font-family: 'Gotham Pro Light Italic'
+  src: url('../fonts/GothamPro-LightItalic.eot')
+  src: local('Gotham Pro Light Italic'), local('GothamPro-LightItalic'), url('../fonts/GothamPro-LightItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamPro-LightItalic.woff') format('woff'), url('../fonts/GothamPro-LightItalic.ttf') format('truetype')
+  font-weight: 300
+  font-style: italic
+$light_italic: 'Gotham Pro Light Italic'
+
+@font-face
+  font-family: 'Gotham Pro Light'
+  src: url('../fonts/GothamPro-Light.eot')
+  src: local('Gotham Pro Light'), local('GothamPro-Light'), url('../fonts/GothamPro-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamPro-Light.woff') format('woff'), url('../fonts/GothamPro-Light.ttf') format('truetype')
+  font-weight: 300
+  font-style: normal
+
+
+@font-face
+  font-family: 'Gotham Pro Black'
+  src: url('../fonts/GothamPro-Black.eot')
+  src: local('Gotham Pro Black'), local('GothamPro-Black'), url('../fonts/GothamPro-Black.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamPro-Black.woff') format('woff'), url('../fonts/GothamPro-Black.ttf') format('truetype')
+  font-weight: 900
+  font-style: normal
+$black: 'Gotham Pro Black'
+
+@font-face
+  font-family: 'Gotham Pro'
+  src: url('../fonts/GothamPro.eot')
+  src: local('Gotham Pro'), local('GothamPro'), url('../fonts/GothamPro.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamPro.woff') format('woff'), url('../fonts/GothamPro.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+$regular: 'Gotham Pro'
+
+@font-face
+  font-family: 'Gotham Pro Medium Italic'
+  src: url('../fonts/GothamPro-MediumItalic.eot')
+  src: local('Gotham Pro Medium Italic'), local('GothamPro-MediumItalic'), url('../fonts/GothamPro-MediumItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/GothamPro-MediumItalic.woff') format('woff'), url('../fonts/GothamPro-MediumItalic.ttf') format('truetype')
+  font-weight: 500
+  font-style: italic
+$medium_italic: 'Gotham Pro Medium Italic'
+
+
+
+=b_a()
+  content: ''
+  position: absolute
+
+=m_a()
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  margin: auto
+
+=flex()
+  display: flex
+  display: -webkit-flex
+
+=j-center()
+  justify-content: center
+  -webkit-justify-content: center
+
+=j-beetween()
+  justify-content: space-between
+  -webkit-justify-content: space-between
+
+=j-space-around()
+  justify-content: space-around
+  -webkit-justify-content: space-around
+
+=j-end()
+  justify-content: flex-end
+  -webkit-justify-content: flex-end
+
+=j-start()
+  justify-content: flex-start
+  -webkit-justify-content: flex-start
+
+=ai-center()
+  align-items: center
+  -webkit-align-items: center
+
+=ai-start()
+  align-items: flex-start
+  -webkit-align-items: flex-start
+
+=ai-end()
+  align-items: flex-end
+  -webkit-align-items: flex-end
+
+=as-center()
+  align-self: center
+  -webkit-align-self: center
+
+=as-end()
+  align-self: flex-end
+  -webkit-align-self: flex-end
+
+=as-start()
+  align-self: flex-start
+  -webkit-align-self: flex-start
+
+=wrap()
+  flex-wrap: wrap
+  -webkit-flex-wrap: wrap
+
+=col()
+  flex-direction: column
+  -webkit-flex-direction: column
+
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  border-radius: $radius
+
+=box-shadow($box-shadow)
+  -webkit-box-shadow: $box-shadow
+  -moz-box-shadow: $box-shadow
+  box-shadow: $box-shadow
+
+=transform($transform)
+  transform: $transform
+  -webkit-transform: $transform
+  -moz-transform: $transform
+  -ms-transform: $transform
+  -o-transform: $transform
+
+=transition($transition_default)
+  transition: $transition_default
+  -webkit-transition: $transition_default
+  -moz-transition: $transition_default
+  -o-transition: $transition_default
+$transition_default: .3s linear
+
+
+$green: #00CBA2
+$green_dark: #00A483
+$black: #2B2A29
+$red: #BE3030
+$grey: #757472
+$grey2: #A0A0A0
+$grey_bg: #F5F5F5
+$light_grey: #F5F5F5
+
+
+/*********************************/
+
+
+
+a, button
+  +transition($transition_default)
+
+a
+  text-decoration: none
+  color: $grey
+  &:hover, &:focus
+    text-decoration: underline
+    color: $green
+button, input, .form-control
+  outline: none
+
+.form-control
+  &:hover, &:focus
+    box-shadow: none
+    outline: none
+
+
+button
+  cursor: pointer
+  &:hover, &:focus
+    +box-shadow(none)
+    outline: none
+strong, b, .bold
+  font-family: $bold
+
+img, video
+  max-width: 100%
+*
+  outline: none
+
+*, *::before, *::after
+  box-sizing: border-box
+
+ul
+  padding: 0
+  margin: 0
+  li
+    list-style: none
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5
+  font-family: $bold
+
+h1, .h1
+  font-size: 32px
+  line-height: 20px
+  &.page_title, &.product_title
+    font-family: $regular
+  @media (max-width: 1200px)
+    font-size: 30px
+    line-height: 1.2
+  @media (max-width: 991px)
+    font-size: 28px
+  @media (max-width: 767px)
+    font-size: 25px
+  @media (max-width: 575px)
+    font-size: 22px
+
+h2, .h2
+  font-size: 24px
+  line-height: 23px
+  @media (max-width: 1200px)
+    line-height: 1.2
+    font-size: 22px
+  @media (max-width: 991px)
+    font-size: 20px
+  @media (max-width: 767px)
+    font-size: 18px
+
+.container
+  margin: auto
+  width: 100%
+  max-width: 1170px
+  padding-left: 15px
+  padding-right: 15px
+
+body
+  background: #fff
+  font-size: 15px
+  line-height: 18px
+  color: $grey
+  font-family: $regular
+  padding: 0
+  margin: 0
+
+.t_header
+  background: $grey_bg
+  padding: 5px 0
+  min-height: 40px
+  @media (max-width: 767px)
+    padding: 0
+  .container
+    max-width: 1260px
+    @media (max-width: 767px)
+      padding: 0
+
+.m_navbar
+  background: $green
+  padding: 10px 15px
+  +flex
+  +ai-center
+  +j-beetween
+  @media (min-width: 768px)
+    display: none
+  .d_flex
+    +flex
+
+  .mm_btn
+    margin-right: 17px
+    @media (max-width: 375px)
+      margin-right: 10px
+    .hamburger
+      width: 24px
+      height: 20px
+      background: none
+      border: 0
+      position: relative
+      span
+        width: 100%
+        height: 2px
+        background: #fff
+        position: absolute
+        left: 0
+        &:nth-child(1)
+          top: 0
+        &:nth-child(2)
+          top: 0
+          bottom: 0
+          margin: auto
+        &:nth-child(3)
+          bottom: 0
+
+  .btn_group
+    +flex
+    +ai-center
+    > li
+      position: relative
+      + li
+        margin-left: 15px
+        @media (max-width: 375px)
+          margin-left: 12px
+
+    button
+      padding: 0
+      background: none
+      border: 0
+    .m_cart
+      display: inline-block
+      position: relative
+      min-width: 33px
+      .count
+        position: absolute
+        right: -5px
+        top: -5px
+        background: #fff
+        color: $green
+        width: 15px
+        height: 15px
+        font-size: 10px
+        +flex
+        +ai-center
+        +j-center
+        +border-radius(50%)
+
+
+    .dropdown_menu
+      position: absolute
+      right: 0
+      top: 100%
+      background: #fff
+      z-index: 3
+      +box-shadow(1px 1px 30px rgb(50 50 50 / 10%))
+      min-width: 280px
+      padding: 10px
+      +border-radius(5px)
+      display: none
+      ul
+        li
+          +flex
+          +ai-center
+          color: $black
+          picture
+            margin-right: 10px
+
+
+
+.main_menu
+  width: 100%
+  @media (max-width: 767px)
+    position: fixed
+    width: 92%
+    height: 100%
+    left: 0
+    top: 0
+    background: #fff
+    overflow: auto
+    z-index: 9999
+    padding: 20px 0
+    +transform(translateX(-100%))
+    +transition($transition_default)
+    opacity: 0
+    &.open
+      opacity: 1
+      +transform(translateX(0))
+
+    &::-webkit-scrollbar
+      width: 3px
+      border: 1px solid #d5d5d5
+
+    &::-webkit-scrollbar-track
+      border-radius: 0
+      background: #eeeeee
+    &::-webkit-scrollbar-thumb
+      border-radius: 3px
+      background: $green
+
+
+
+  .mm_close
+    margin-left: 12px
+    margin-bottom: 20px
+    +flex
+    +ai-center
+    img, svg
+      margin-right: 20px
+    span
+      color: $black
+      font-size: 18px
+      font-family: $medium
+    @media (min-width: 768px)
+      display: none
+
+
+  .h_contacts
+    padding-left: 12px
+    padding-top: 5px
+    @media (min-width: 768px)
+      display: none
+    > p
+      color: $black
+      font-size: 18px
+      font-family: $medium
+      margin-bottom: 14px
+    ul
+      li
+        font-size: 15px
+        margin-bottom: 8px
+
+        &:nth-child(3)
+          +ai-start
+        &:nth-child(2)
+          margin-bottom: 15px
+
+
+
+
+  .nav
+    @media (min-width: 768px)
+      +flex
+      +j-beetween
+
+      li
+        +flex
+        +j-center
+        +ai-center
+        flex-grow: 1
+
+        + li
+          border-left: 1px solid #A0A0A0
+        a
+          +flex
+          +ai-center
+          color: $black
+          font-size: 14px
+          @media (max-width: 1200px)
+            font-size: 12px
+          &:hover, &:focus
+            color: $green
+          img, svg
+            margin-right: 5px
+            @media (max-width: 1200px)
+              margin-right: 3px
+    @media (max-width: 767px)
+      + .nav
+        background: #FAFAFA
+        li
+          a
+            border-bottom: 1px solid #F5F5F5
+      li
+        position: relative
+        padding-left: 12px
+        width: 100%
+
+        .sub_menu
+          display: none
+        .arrow
+          display: inline-block
+          position: absolute
+          width: 23px
+          height: 23px
+          right: 6px
+          top: 13px
+          +transition($transition_default)
+          &.act
+            +transform(rotate(90deg))
+
+          &:before
+            +b_a
+            +m_a
+            width: 8px
+            height: 13px
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.58337 0.75L0.232117 2.10125L4.62128 6.5L0.232118 10.8988L1.58337 12.25L7.33336 6.5L1.58337 0.75Z' fill='%23A0A0A0'/%3e%3c/svg%3e ")
+
+
+        a
+          color: $black
+          font-size: 15px
+          padding: 15px 30px 15px 0
+          border-bottom: 1px solid #FAFAFA
+          display: inline-block
+          width: 100%
+
+          img, svg
+            display: none
+
+    &.c_nav
+      @media (min-width: 768px)
+        display: none
+
+.m_header
+  padding: 15px 0
+  @media (max-width: 767px)
+    display: none
+.m_header_row
+  +flex
+  +ai-center
+  +wrap
+  .logo
+    width: 45%
+    //padding-right: 20px
+    @media (max-width: 1200px)
+      width: 35%
+    @media (max-width: 991px)
+      width: 25%
+    a
+      +flex
+      +ai-center
+      color: $grey
+      font-size: 14px
+      line-height: 20px
+      text-decoration: none
+      &:hover, &:focus
+        span
+          color: $green
+      @media (max-width: 1200px)
+        +wrap
+
+      span
+        display: inline-block
+        width: 100%
+        max-width: 140px
+        +transition($transition_default)
+        @media (max-width: 1200px)
+          max-width: 100%
+          font-size: 12px
+          line-height: 1.2
+
+      img
+        margin-right: 25px
+
+  .h_contacts
+    width: 55%
+    +flex
+    +j-beetween
+    @media (max-width: 1200px)
+      width: 65%
+      padding-left: 20px
+    @media (max-width: 991px)
+      width: 75%
+
+
+
+
+
+.h_contacts
+  ul
+    li
+      +flex
+      +ai-center
+      span, a
+        color: $black
+        font-size: 15px
+        @media (max-width: 1200px)
+          font-size: 14px
+          @media (max-width: 991px)
+            font-size: 13px
+      a
+        &:hover, &:focus
+          color: $green
+        b, strong
+          font-size: 18px
+
+
+      picture
+        display: inline-block
+        margin-right: 12px
+        width: 25px
+        min-width: 22px
+        text-align: center
+        @media (max-width: 1200px)
+          margin-right: 5px
+
+
+.b_header
+  background: $green
+  color: #fff
+  padding: 10px 0
+  @media (max-width: 767px)
+    display: none
+.b_header_row
+  +flex
+  +ai-center
+  +j-beetween
+
+
+.c_menu
+  .c_menu_btn
+    +flex
+    +ai-center
+    cursor: pointer
+    .burger
+      position: relative
+      width: 25px
+      min-width: 25px
+      padding: 0
+      height: 22px
+      margin-right: 15px
+      @media (max-width: 1200px)
+        margin-right: 10px
+        width: 20px
+        height: 18px
+      @media (max-width: 991px)
+        margin-right: 8px
+      span
+        position: absolute
+        width: 100%
+        height: 2px
+        background: #fff
+        left: 0
+        &:nth-child(1)
+          top: 0
+        &:nth-child(2)
+          top: 0
+          bottom: 0
+          margin: auto
+        &:nth-child(3)
+          bottom: 0
+    .text
+      font-size: 16px
+      color: #fff
+      font-family: $bold
+      margin-right: 10px
+      white-space: nowrap
+      @media (max-width: 1200px)
+        font-size: 15px
+        line-height: 1.2
+      @media (min-width: 992px)
+        font-size: 14px
+
+    .arrow
+      width: 18px
+      height: 18px
+      position: relative
+      display: inline-block
+      &:before
+        +b_a
+        +m_a
+        width: 10px
+        height: 6px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.5 1.5L8.4425 0.442505L5 3.8775L1.5575 0.442505L0.5 1.5L5 6L9.5 1.5Z' fill='white'/%3e%3c/svg%3e ")
+
+
+
+
+.search
+  width: 100%
+  max-width: 683px
+  @media (min-width: 768px)
+    margin: 0 15px
+  .search_form
+    +flex
+    +ai-center
+    position: relative
+    .form_control
+      width: 100%
+      height: 40px
+      background: #fff
+      border: 0
+      order: 2
+      +border-radius(3px)
+      padding-left: 52px
+      color: $black
+      font-family: $regular
+      font-size: 16px
+      @media (max-width: 1200px)
+        font-size: 14px
+      &::-webkit-input-placeholder
+        color: $grey2
+        font-size: 16px
+        font-family: $regular
+        @media (max-width: 1200px)
+          font-size: 14px
+      &::-ms-input-placeholder
+        color: $grey2
+        font-size: 16px
+        font-family: $regular
+        @media (max-width: 1200px)
+          font-size: 14px
+      &::-moz-placeholder
+        color: $grey2
+        font-size: 16px
+        font-family: $regular
+        @media (max-width: 1200px)
+          font-size: 14px
+      &:-ms-input-placeholder
+        color: $grey2
+        font-size: 16px
+        font-family: $regular
+        @media (max-width: 1200px)
+          font-size: 14px
+      &:-moz-placeholder
+        color: $grey2
+        font-size: 16px
+        font-family: $regular
+        @media (max-width: 1200px)
+          font-size: 14px
+
+    .search_btn
+      order: 1
+      position: absolute
+      width: 45px
+      height: 40px
+      cursor: pointer
+      &:before
+        +b_a
+        +m_a
+        width: 24px
+        height: 24px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M21.3187 20.0273L15.232 13.9406C16.1766 12.7195 16.6875 11.2266 16.6875 9.65625C16.6875 7.77656 15.9539 6.01406 14.6273 4.68516C13.3008 3.35625 11.5336 2.625 9.65625 2.625C7.77891 2.625 6.01172 3.35859 4.68516 4.68516C3.35625 6.01172 2.625 7.77656 2.625 9.65625C2.625 11.5336 3.35859 13.3008 4.68516 14.6273C6.01172 15.9562 7.77656 16.6875 9.65625 16.6875C11.2266 16.6875 12.7172 16.1766 13.9383 15.2344L20.025 21.3187C20.0428 21.3366 20.064 21.3508 20.0874 21.3604C20.1107 21.3701 20.1357 21.3751 20.1609 21.3751C20.1862 21.3751 20.2112 21.3701 20.2345 21.3604C20.2578 21.3508 20.279 21.3366 20.2969 21.3187L21.3187 20.2992C21.3366 20.2814 21.3508 20.2602 21.3604 20.2369C21.3701 20.2135 21.3751 20.1885 21.3751 20.1633C21.3751 20.138 21.3701 20.113 21.3604 20.0897C21.3508 20.0664 21.3366 20.0452 21.3187 20.0273ZM13.3688 13.3688C12.375 14.3602 11.0578 14.9062 9.65625 14.9062C8.25469 14.9062 6.9375 14.3602 5.94375 13.3688C4.95234 12.375 4.40625 11.0578 4.40625 9.65625C4.40625 8.25469 4.95234 6.93516 5.94375 5.94375C6.9375 4.95234 8.25469 4.40625 9.65625 4.40625C11.0578 4.40625 12.3773 4.95 13.3688 5.94375C14.3602 6.9375 14.9062 8.25469 14.9062 9.65625C14.9062 11.0578 14.3602 12.3773 13.3688 13.3688Z' fill='%23A0A0A0'/%3e%3c/svg%3e ")
+
+
+
+.cart
+  a
+    +flex
+    +ai-center
+    &:hover, &:focus
+      text-decoration: none
+    picture
+      display: inline-block
+      margin-right: 15px
+      min-width: 35px
+      @media (max-width: 1200px)
+        margin-right: 10px
+    .text
+      color: #fff
+      font-size: 16px
+      //font-family: $bold
+      strong
+        display: block
+      .count
+        color: $light_grey
+        font-size: 12px
+
+
+
+
+
+
+
+
+
+
+
+
+
+main
+  padding-top: 30px
+  @media (max-width: 1200px)
+    padding-top: 20px
+  @media (max-width: 767px)
+    padding-top: 15px
+
+
+
+.m_categories
+  display: inline-block
+  margin: 0 -5px
+  .d_flex
+    clear: both
+    &.float_left
+      .item
+        float: left
+    &.float_right
+      .item
+        float: right
+
+    .item
+      background-size: cover
+      background-position: center
+      +flex
+      +ai-center
+      +j-center
+      height: 285px
+      width: calc(50% - 10px)
+      +border-radius(3px)
+      position: relative
+      margin: 5px
+      padding: 30px
+      text-decoration: none
+      @media (max-width: 1200px)
+        height: 220px
+      @media (max-width: 991px)
+        height: 180px
+      @media (max-width: 767px)
+        width: 100%
+        margin: 0 0 10px
+      @media (max-width: 575px)
+        height: 85px
+      &:hover, &:focus
+        text-decoration: none
+        &:before
+          background: rgba(0, 0, 0, 0.1)
+      &:before
+        +b_a
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, 0.6)
+        +border-radius(3px)
+        +transition($transition_default)
+      &.large
+        height: 580px
+        @media (max-width: 1200px)
+          height: 450px
+        @media (max-width: 991px)
+          height: 370px
+        @media (max-width: 767px)
+          height: 180px
+        @media (max-width: 575px)
+          height: 85px
+        @media (min-width: 1201px)
+          span
+            font-size: 40px
+            line-height: 60px
+      &.small
+        width: calc(25% - 10px)
+        @media (max-width: 767px)
+          width: 100%
+      &.medium
+        @media (min-width: 1201px)
+          span
+            font-size: 34px
+            line-height: 48px
+
+      span
+        position: relative
+        color: #fff
+        text-transform: uppercase
+        font-size: 28px
+        line-height: 50px
+        font-family: $bold
+        text-align: center
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.2)
+        @media (max-width: 1200px)
+          font-size: 22px
+          line-height: 1.2
+        @media (max-width: 991px)
+          font-size: 18px
+
+
+.box_title
+  border-bottom: 1px solid #00CBA2
+  +flex
+  +ai-center
+  +j-beetween
+  +wrap
+  padding-bottom: 30px
+  margin-bottom: 30px
+  padding-top: 45px
+  @media (max-width: 1200px)
+    padding-bottom: 20px
+    margin-bottom: 20px
+    padding-top: 35px
+  @media (max-width: 767px)
+    padding-bottom: 15px
+    margin-bottom: 15px
+    padding-top: 30px
+  .title
+    width: 50%
+    color: $black
+    font-size: 24px
+    line-height: 23px
+    font-family: $bold
+    @media (max-width: 1200px)
+      font-size: 22px
+      line-height: 1.2
+    @media (max-width: 991px)
+      font-size: 20px
+    @media (max-width: 767px)
+      //font-size: 18px
+    @media (max-width: 575px)
+      //font-size: 16px
+
+
+.products_list
+  +flex
+  +wrap
+  .product_item
+    padding: 5px
+    width: 25%
+    &:hover
+      .product_item_content
+        background: #F5F5F5
+        .product_name
+          font-family: $bold
+        .price
+          color: $green_dark
+        .btn_default
+          background: $green_dark
+    .product_item_content
+      background: #F8F8F8
+      +border-radius(3px)
+      padding: 10px
+      +transition($transition_default)
+      @media (max-width: 767px)
+        //padding: 5px
+      .img_thumbnail
+        position: relative
+        background: #fff
+        width: 100%
+        height: 175px
+        margin-bottom: 27px
+        img
+          position: absolute
+          +m_a
+          max-width: 99%
+          max-height: 99%
+        .label
+          position: absolute
+          left: 0
+          top: 0
+          background: $red
+          z-index: 2
+          color: #fff
+          +border-radius(0 6px 6px 0)
+          font-size: 14px
+          padding: 5px 13px
+          @media (max-width: 1200px)
+            padding: 2px 8px
+
+      .articul
+        color: $black
+        font-size: 15px
+        margin-bottom: 8px
+        @media (max-width: 1200px)
+          font-size: 14px
+      .product_name
+        text-decoration: none
+        color: $black
+        font-size: 18px
+        line-height: 22px
+        display: -webkit-box
+        -webkit-box-orient: vertical
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: normal
+        -webkit-line-clamp: 2
+        max-height: 45px
+        font-family: $medium
+        margin-bottom: 10px
+        @media (max-width: 1200px)
+          font-size: 16px
+          line-height: 1.2
+
+      .price
+        color: $green
+        font-family: $medium
+        font-size: 22px
+        margin-bottom: 30px
+        +transition($transition_default)
+        @media (max-width: 1200px)
+          font-size: 20px
+          margin-bottom: 20px
+        @media (max-width: 767px)
+          font-size: 18px
+
+
+.btn_default
+  text-decoration: none
+  background: $green
+  +border-radius(3px)
+  color: #fff
+  font-size: 16px
+  font-family: $bold
+  +flex
+  +j-center
+  +ai-center
+  width: 100%
+  height: 48px
+  +transition($transition_default)
+  @media (max-width: 1200px)
+    height: 45px
+  @media (max-width: 767px)
+    height: 40px
+    font-size: 14px
+  &:hover, &:focus
+    text-decoration: none
+    color: #fff
+    background: $green_dark
+
+
+
+
+.slick-arrow
+  width: 33px
+  height: 33px
+  opacity: 1
+  z-index: 2
+  +transition($transition_default)
+  @media (max-width: 1200px)
+    background: $green
+    &:hover, &:focus
+      background: $green_dark
+  &:before
+    +b_a
+    +m_a
+    width: 11px
+    height: 17px
+    opacity: 1
+    +transition($transition_default)
+.slick-prev
+  left: 0
+  @media (min-width: 1201px)
+    left: -45px
+    &:hover, &:focus
+      &:before
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='17' viewBox='0 0 11 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.24997 16.75L10.1887 14.8113L3.89122 8.5L10.1887 2.18875L8.24997 0.250002L-2.7889e-05 8.5L8.24997 16.75Z' fill='%232B2A29'/%3e%3c/svg%3e ")
+  &:before
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='17' viewBox='0 0 11 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.24997 16.75L10.1887 14.8113L3.89122 8.5L10.1887 2.18875L8.24997 0.250002L-2.7889e-05 8.5L8.24997 16.75Z' fill='%23A0A0A0'/%3e%3c/svg%3e ")
+    @media (max-width: 1200px)
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='17' viewBox='0 0 11 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.24997 16.75L10.1887 14.8113L3.89122 8.5L10.1887 2.18875L8.24997 0.250002L-2.7889e-05 8.5L8.24997 16.75Z' fill='%23fff'/%3e%3c/svg%3e ")
+
+.slick-next
+  right: 0
+  @media (min-width: 1201px)
+    right: -45px
+    &:hover, &:focus
+      &:before
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='17' viewBox='0 0 11 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2.75003 0.25L0.81128 2.18875L7.10878 8.5L0.811282 14.8112L2.75003 16.75L11 8.5L2.75003 0.25Z' fill='%232B2A29'/%3e%3c/svg%3e ")
+  &:before
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='17' viewBox='0 0 11 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2.75003 0.25L0.81128 2.18875L7.10878 8.5L0.811282 14.8112L2.75003 16.75L11 8.5L2.75003 0.25Z' fill='%23A0A0A0'/%3e%3c/svg%3e ")
+    @media (max-width: 1200px)
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='11' height='17' viewBox='0 0 11 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2.75003 0.25L0.81128 2.18875L7.10878 8.5L0.811282 14.8112L2.75003 16.75L11 8.5L2.75003 0.25Z' fill='%23fff'/%3e%3c/svg%3e ")
+
+
+.articles_list
+  +flex
+  +wrap
+  .article_item
+    width: 33.33%
+    padding: 5px
+    .article_item_content
+      background: #F8F8F8
+      +border-radius(3px)
+      padding: 10px
+      .img_thumbnail
+        display: inline-block
+        position: relative
+        background-position: center
+        background-size: cover
+        width: 100%
+        height: 175px
+        +border-radius(3px)
+        margin-bottom: 10px
+      .article_name
+        text-decoration: none
+        color: $black
+        font-size: 18px
+        line-height: 22px
+        display: -webkit-box
+        -webkit-box-orient: vertical
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: normal
+        -webkit-line-clamp: 2
+        max-height: 45px
+        font-family: $medium
+        margin-bottom: 10px
+        @media (max-width: 1200px)
+          font-size: 16px
+          line-height: 1.2
+
+
+.excerpt
+  font-size: 15px
+  line-height: 18px
+  color: $grey
+
+
+.show_all
+  text-decoration: none
+  color: $grey
+  font-size: 16px
+  font-family: $medium
+  &:hover, &:focus
+    color: $green
+
+
+.slick-slider
+  @media (min-width: 1201px)
+    .slick-list
+      margin: 0 -10px
+
+
+
+.video_list
+  +flex
+  +wrap
+  width: 100%
+  .item
+    width: 33.33%
+  .video_item
+    padding: 5px
+    iframe, video
+      width: 100%
+      height: 215px
+
+
+.m_seotext
+  padding-bottom: 45px
+  @media (max-width: 1200px)
+    padding-bottom: 30px
+  @media (max-width: 767px)
+    padding-bottom: 25px
+
+footer
+  background: $green_dark
+  color: #fff
+  padding: 22px 0 12px
+  a
+    color: #fff
+    &:hover, &:focus
+      text-decoration: underline
+      color: #fff
+
+  .f_title
+    font-size: 18px
+    font-family: $bold
+    margin-bottom: 18px
+  .f_menu
+    li
+      margin-bottom: 10px
+      a
+        color: $light_grey
+        font-size: 15px
+        &:hover, &:focus
+          text-decoration: underline
+  .fm_menu
+    margin-bottom: 33px
+    @media (min-width: 768px)
+      display: none
+  .f_contacts
+    li
+      margin-bottom: 10px
+      font-size: 15px
+      line-height: 28px
+      a
+        display: block
+
+  .f_row
+    +flex
+    +wrap
+    .col_left
+      width: 75%
+      +flex
+      +wrap
+      @media (max-width: 767px)
+        display: none
+      .column
+        width: 33.33%
+    .col_right
+      width: 25%
+      @media (max-width: 767px)
+        width: 100%
+
+
+
+.copyright
+  background: $black
+  color: #fff
+  height: 38px
+  font-size: 15px
+  +flex
+  +ai-center
+  +j-center
+  a
+    color: $green
+    &:hover, &:focus
+      text-decoration: underline
+      color: $green_dark
+
+
+.m_seotext
+  .more
+    @media (max-width: 767px)
+      display: none
+  .read_more
+    span
+      cursor: pointer
+      display: inline-block
+      text-decoration: underline
+      color: $green
+      font-family: $bold
+      font-size: 16px
+    @media (min-width: 768px)
+      display: none
+
