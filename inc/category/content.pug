@@ -1,110 +1,111 @@
-.page_content
-    .container
-        ul.breadcrumb
-            li
-                a(href="#") Главная
-            li
-                a(href="#") #{page.title}
-
-        .download_price
-            .text
-                .h3 Скачайте наш прайс!
-                p Чтобы подробнее ознакомиться с продукцией, которую мы предлагаем
-            a.btn_default.download(href="#")
-                span Скачать прайс
+main
+    .page_content
+        .container
+            ul.breadcrumb
+                li
+                    a(href="#") Главная
+                li
+                    a(href="#") Каталог
+                li
+                    a(href="#") #{page.title}
 
 
+            h1.page_title #{page.title}
+            .m_row
+                .sidebar
+                    -var s_cat=['Светодиодные ленты','Светильники','Прожекторы','Алюминиевый профиль','Гибкий неон','Управление','Модуля'];
+                    -var s_sub=['Широтно-импульсные','Транзисторные','Импульсные','Стабилизированные','Бесперебойные'];
 
+                    .s_catalog
+                        .s_catalog_title Категории товаров
+                        ul.menu
+                            for s_cat_item,  index in s_cat
+                                li
+                                    a(href="#")=s_cat_item
+                                    span.arrow
+                                    ul.sub_menu
+                                        for sub_item, index in s_sub
+                                            li
+                                                a(href="#")=sub_item
 
-
-        .main_catalog
-            .h2 #{page.title}
-            .row
-                .col-12.col-xl-3
                     form
+
                         .filter
-                            .filter_title ФИЛЬТР
-                            .filter-group
-                                .filter_item
+                            .filter_title Фильтр
+                            .filter_group
+                                .filter_item.act
                                     .filter_item_title Цена
                                     .filter_item_body
                                         .range_values
-                                            .tasks_group
-
-                                                input.tasks_status1(type="text" value="0")
-                                                span —
-                                                input.tasks_status2(type="text")
                                             .range
+                                            .tasks_group
+                                                span от
+                                                input.tasks_status1(type="text" value="0")
+                                                span до
+                                                input.tasks_status2(type="text" value="350")
+                                                span BYN
                                 .filter_item
-                                    .filter_item_title Бренд
+                                    .filter_item_title Мощность на 1 м
                                     .filter_item_body
                                         .checkbox_list
                                             -for(var ch=1;ch<=10;ch++)
                                                 .item
                                                     .custom_checkbox
                                                         input(type="checkbox" id="checkbox_"+ch+"")
-                                                        label(for="checkbox_"+ch+"") HP (70)
-
+                                                        label(for="checkbox_"+ch+"") Чекбокс
                                 .filter_item
-                                    .filter_item_title Операционная система
+                                    .filter_item_title Цвет свечения
                                     .filter_item_body
                                         .checkbox_list
                                             -for (var ch1 = 1; ch1 <= 2; ch1++)
                                                     .item
-                                                        .custom_checkbox
-                                                            input(type="checkbox" id="checkbox_1"+ch1+"")
-                                                            label(for="checkbox_1"+ch1+"") Android (173)
-
-                                .filter_item
-                                    .filter_item_title Цена
-                                    .filter_item_body
-                                        .range_values
-                                            .tasks_group
-                                                input.tasks_status1(type="text" value="0")
-                                                span —
-                                                input.tasks_status2(type="text")
-                                            .range
+                                                            .custom_checkbox
+                                                                input(type="checkbox" id="checkbox_1"+ch1+"")
+                                                                label(for="checkbox_1"+ch1+"") Чекбокс
                                 .filter_item
                                     .btn_group
                                         button.btn_default(type="submit") Показать
                                         button.btn_default.btn_grey(type="reset") Сбросить
 
 
+                .content
+                    .sort_views
+                        .sort
+                            span Сортировать по
+                            .custom_select
+                                select
+                                    option названию (от А до Я)
+                                    option По цене
+                                    option По популярности
+                        .views
+                            .view_grid.active
+                            .view_list
 
+                    .products_list.pr_views
+                        -for (var p = 1; p <= 12; p++)
+                           .product_item
+                               .product_item_content
+                                    .c_left
+                                       .img_thumbnail
+                                           .label Хит
+                                           a(href="#")
+                                               img(src="img/product_item.png")
+                                    .c_center
+                                        .articul Артикул: 12389234
+                                        a.product_name(href="#") Блок питания Venom Негерметичный 12V 15Вт
+                                        .availability
+                                            if p === 3 || p === 5
+                                                span.red Под заказ
+                                            else
+                                                span.green В наличии
+                                        .price 148 BYN/шт
+                                    .c_right
+                                        .amount
+                                            span.down -
+                                            input(type="text" value="1")
+                                            span.up +
+                                        a.btn_default(href="#") В корзину
 
-                .col-12.col-xl-9
-                    -var subcat=['Блоки питания','Видеокарты','Оперативная память','Материнские платы','Корпуса','Процессоры','Оптические приводы','Кулеры','Термопаста','Жесткие диски','SSD диски','Внешние HDD и SSD диски'];
-                    .subcat_list
-                        for s_item, index in subcat
-                            .item
-                                a(href="#")
-                                    picture
-                                        img(src="img/subcat_"+index+".png")
-                                    .text=s_item
-
-                    .sort
-                        .custom_select
-                            select
-                                option По цене
-                                option По популярности
-                    .products_list
-                        -for (var p1 = 1; p1 <= 8; p1++)
-                            .product_item
-                                .label Новинка!
-                                .img_thumbnail
-                                    a(href="#")
-                                        img(src="img/image5.png")
-                                a.product_item_name(href="#") Название товара #{p1}
-                                .amount_price
-                                    .amount
-                                        span.down -
-                                        input(type="text" value="1")
-                                        span.up +
-                                    .price 1200 РУБ.
-                                .btn_group
-                                    a.btn_default(href="#") Подробнее
-                                    a.btn_small.add_to_compare(href="#")
-                                    a.btn_small.add_to_cart(href="#")
 
                     .pagination
                         ul
@@ -119,17 +120,20 @@
                             li
                                 a(href="") 4
                             li
-                                a(href="") 5
-                            li
-                                span ...
-                            li
-                                a(href="") 9
-                            li
                                 a.page_next(href="")
 
 
 
-                .col-12.page_text
-                    h2 Блок описание
-                    p Нам 15 лет. Компания ТехноБай входит в лидеры продаж компьютерной, периферийной  и офисной техники на рынке Республики Беларусь. В число наших партнеров входят мировые лидеры it-индустрии: HP, Lenovo, Samsung,Acer, Dell, Canon, Kyocera, Epson, BenQ, Philips, Toshiba, Logitech, LG, APC, Kaspersky , ASUS, Trancend, Targus.
-                    p Нам 15 лет. Компания ТехноБай входит в лидеры продаж компьютерной, периферийной  и офисной техники на рынке Республики Беларусь. В число наших партнеров входят мировые лидеры it-индустрии: HP, Lenovo, Samsung,Acer, Dell, Canon, Kyocera, Epson, BenQ, Philips, Toshiba, Logitech, LG, APC, Kaspersky , ASUS, Trancend, Targus. Нам 15 лет. Компания ТехноБай входит в лидеры продаж компьютерной, периферийной  и офисной техники на рынке Республики Беларусь. В число наших партнеров входят мировые лидеры it-индустрии: HP, Lenovo, Samsung,Acer, Dell, Canon, Kyocera, Epson, BenQ, Philips, Toshiba, Logitech, LG, APC, Kaspersky , ASUS, Trancend, Targus.
+
+            .page_seotext
+                .box_title
+                    .title Светодиодное освещение
+                .desc
+                    p С каждым днём всё больше светодиодная лента представляет собой гибкую печатную плату, которая усеяна светодиодами и резисторами. Она предназначается для использования. Светодиодное освещение — одно из перспективных направлений технологий искусственного освещения[1], основанное на использовании светодиодов в качестве источника света.
+                    p Развитие светодиодного освещения непосредственно связано с достижениями в технологии белых светодиодов. Разработаны так называемые сверхъяркие светодиоды, специально предназначенные для искусственного освещения. В сравнении с обычными лампами накаливания, а также люминесцентными лампами светодиодные источники света обладают многими преимуществами.
+                    .more
+                        p При оптимальной схемотехнике источников питания, применении качественных компонентов и обеспечении надлежащего теплового режима, срок службы светодиодных систем освещения при сохранении приемлемых для общего освещения показателей может достигнуть 36-72 тысяч часов, что в среднем в 50 раз больше по сравнению с номинальным сроком службы ламп накаливания общего назначения и в 4-16 раз больше, чем у большинства люминесцентных ламп.
+                        p Производители светодиодов из-за постоянного обновления и совершенствования продукции не имеют возможности проводить тестирование в реальном времени и указывают прогнозируемый срок службы, используя специальные методики, такие как TM-21 и IESNA LM-80. Большой срок службы в некоторых применениях играет решающую роль. Так, экономия на обслуживании и замене ламп в уличных светильниках зачастую превышает экономию на электроэнергии.
+                        p Высокие требования к качеству теплоотвода, поскольку температура оказывает решающее влияние на надежность. Мощные осветительные светодиоды требуют наличия внешнего радиатора для охлаждения, потому что имеют неблагоприятное соотношение своих размеров к выделяемой тепловой мощности и не могут без специального теплоотвода рассеять столько тепла, сколько выделяют. Так, для рассеивания 5 Вт тепловой мощности, выделяемой полупроводниковым прибором с возможностью работы при температуре окружающей среды до +40 °C, потребуется радиатор площадью 100 см2. Необходимость использования радиатора удорожает готовое изделие и затрудняет конструирование светодиодных ламп свыше 15 Вт, совместимых с типоразмером цоколя и габаритами ламп накаливания общего назначения.
+                    p.read_more
+                        span Читать подробнее

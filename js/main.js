@@ -53,10 +53,18 @@ $(document).ready(function(){
         e.stopPropagation();
     });
 
-    $('.main_menu .arrow').click(function(){
+    $('.main_menu .arrow, .s_catalog .arrow, .filter_item_title').click(function(){
+        $(this).next().slideToggle();
+        $(this).parent().toggleClass('act');
+    })
+
+
+    $('.s_catalog_title, .filter_title').click(function(){
         $(this).next().slideToggle();
         $(this).toggleClass('act');
     });
+
+
 
     if($('.m_products_slider .product_item').length > 4){
         $('.m_products_slider').slick({
@@ -197,6 +205,95 @@ $(document).ready(function(){
         $(this).hide().prev().slideDown();
     });
 
+    $('.amount .down').click(function () {
+        var $input = $(this).parent().find('input');
+        var count = parseInt($input.val()) - 1;
+        count = count < 1 ? 1 : count;
+        $input.val(count);
+        $input.change();
+        return false;
+    });
+    $('.amount .up').click(function () {
+        var $input = $(this).parent().find('input');
+        $input.val(parseInt($input.val()) + 1);
+        $input.change();
+        return false;
+    });
+
+
+
+    var productView = localStorage.getItem('productView');
+    if(productView == 'list'){
+        $('.views .view_grid').removeClass('active');
+        $('.views .view_list').addClass('active');
+        $('.pr_views').removeClass('grid').addClass('list');
+    }else if(productView == 'grid'){
+        $('.views .view_list').removeClass('active');
+        $('.views .view_grid').addClass('active');
+        $('.pr_views').removeClass('list').addClass('grid');
+    }
+    $('.views .view_grid').click(function(){
+        localStorage.removeItem('productView');
+        localStorage.setItem('productView', 'grid');
+        $('.views .view_list').removeClass('active');
+        $(this).addClass('active');
+        $('.pr_views').removeClass('list').addClass('grid');
+        return false;
+    });
+    $('.views .view_list').click(function(){
+        localStorage.removeItem('productView');
+        localStorage.setItem('productView', 'list');
+        $('.views .view_grid').removeClass('active');
+        $(this).addClass('active');
+        $('.pr_views').removeClass('grid').addClass('list');
+        return false;
+    });
+
+    console.log( "productView = " + localStorage.getItem("productView"));
+
+
+
+
+    $('.range_values').each(function(){
+        var range=$(this).find('.range');
+        var tasks_status1=$(this).find('.tasks_status1');
+        var tasks_status2=$(this).find('.tasks_status2');
+        $(range).slider({
+            range: true,
+            min: 0,
+            max: 350,
+            values: [0, 150],
+            step: 1,
+            slide: function(event, ui) {
+                $(tasks_status1).val( ui.values[0] );
+                $(tasks_status2).val( ui.values[1] );
+            }
+        });
+
+    });
+    $(document).on("change","input[class=tasks_status1]", function() {
+        $(this).closest('.range_values').find('.range').slider('values',0,$(this).val());
+    });
+    $(document).on("change","input[class=tasks_status2]", function() {
+        $(this).closest('.range_values').find('.range').slider('values',1,$(this).val());
+    });
+
+
+    $('.product_slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        fade: true,
+        asNavFor: '.product_slider_nav'
+    });
+    $('.product_slider_nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.product_slider',
+        dots: false,
+        focusOnSelect: true,
+        arrows: true
+    });
 
 
     /*
@@ -274,41 +371,7 @@ $(document).ready(function(){
     });
 
 
-    $('.product_slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        fade: true,
-        asNavFor: '.product_slider_nav'
-    });
-    $('.product_slider_nav').slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        asNavFor: '.product_slider',
-        dots: false,
-        focusOnSelect: true,
-        arrows: true,
-        responsive: [
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 4
-                }
-            },
-            {
-                breakpoint: 991,
-                settings: {
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 2
-                }
-            }
-        ]
-    });
+
 
     $('.mm_contacts_btn, .mm_search_btn').click(function(){
         $(this).next().slideToggle();
