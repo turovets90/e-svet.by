@@ -153,6 +153,7 @@ header
         .container
             .b_header_row
                 .c_menu
+                    .bg_dark
                     .c_menu_btn
                         .burger
                             span
@@ -160,6 +161,14 @@ header
                             span
                         .text Каталог товаров
                         span.arrow
+                    ul.menu
+                        for m_item, index in c_menu
+                            li
+                                a(href="#")=m_item
+                                ul.sub_menu
+                                    -for(var sb=1;sb<=8;sb++)
+                                        li
+                                            a(href="#") SMD3528
 
                 .search
                     form.search_form

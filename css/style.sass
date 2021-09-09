@@ -611,7 +611,7 @@ body
 .b_header
   background: $green
   color: #fff
-  padding: 10px 0
+  //padding: 10px 0
   @media (max-width: 767px)
     display: none
 .b_header_row
@@ -619,12 +619,35 @@ body
   +ai-center
   +j-beetween
 
+html
+  &.page_noscroll
+    overflow: hidden
 
 .c_menu
+  position: relative
+  .bg_dark
+    display: none
+    position: fixed
+    width: 100%
+    height: 100vh
+    left: 0
+    background: rgba(0,0,0,.65)
+    z-index: 3
+    //margin-top: 56px
+  &:hover
+    .c_menu_btn
+      background: $green_dark
+    .bg_dark
+      display: block
+    .menu
+      display: block
   .c_menu_btn
     +flex
     +ai-center
     cursor: pointer
+    padding: 17px 18px
+    &:hover, &:focus
+      background: $green_dark
     .burger
       position: relative
       width: 25px
@@ -675,6 +698,69 @@ body
         width: 10px
         height: 6px
         background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.5 1.5L8.4425 0.442505L5 3.8775L1.5575 0.442505L0.5 1.5L5 6L9.5 1.5Z' fill='white'/%3e%3c/svg%3e ")
+
+  .menu
+    display: none
+    position: absolute
+    top: 100%
+    width: 100%
+    left: 0
+    background: #fff
+    z-index: 99
+
+    li
+      padding-left: 10px
+      &:hover
+        > .sub_menu
+          display: block
+      &:hover, &:focus
+        background: #FAFAFA
+        > a
+          color: $green
+          font-family: $medium
+          text-decoration: none
+          &:before
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.58318 0.75L0.231934 2.10125L4.6211 6.5L0.231935 10.8988L1.58318 12.25L7.33318 6.5L1.58318 0.75Z' fill='%2300A483'/%3e%3c/svg%3e ")
+      a
+        color: $black
+        font-size: 15px
+        position: relative
+        display: inline-block
+        width: 100%
+        border-bottom: 1px solid #F5F5F5
+        padding: 18px 0
+        &:hover, &:focus
+          color: $green
+          font-family: $medium
+          text-decoration: none
+          &:before
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.58318 0.75L0.231934 2.10125L4.6211 6.5L0.231935 10.8988L1.58318 12.25L7.33318 6.5L1.58318 0.75Z' fill='%2300A483'/%3e%3c/svg%3e ")
+        &:before
+          +b_a
+          right: 10px
+          top: 0
+          bottom: 0
+          margin: auto
+          width: 8px
+          height: 13px
+          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.58318 0.75L0.231934 2.10125L4.6211 6.5L0.231935 10.8988L1.58318 12.25L7.33318 6.5L1.58318 0.75Z' fill='%23A0A0A0'/%3e%3c/svg%3e ")
+
+
+    @media (max-width: 767px)
+      display: none
+    .sub_menu
+      display: none
+      position: absolute
+      left: 100%
+      top: 0
+      min-width: 247px
+      background: #fff
+      li
+        a
+          &:before
+            display: none
+
+
 
 
 
@@ -875,6 +961,10 @@ main
           font-size: 18px
 
 
+.page_content
+  .box_title
+    .title
+      width: 100%
 .box_title
   border-bottom: 1px solid #00CBA2
   +flex
@@ -892,6 +982,8 @@ main
     padding-bottom: 15px
     margin-bottom: 15px
     padding-top: 30px
+  @media (max-width: 575px)
+
   .title
     width: 50%
     color: $black
@@ -1334,6 +1426,8 @@ footer
   +j-center
   a
     color: $green
+    display: inline-block
+    margin-left: 5px
     &:hover, &:focus
       text-decoration: underline
       color: $green_dark
@@ -1979,3 +2073,260 @@ footer
     .btn_default
       max-width: 217px
 
+
+
+
+
+.return_form
+  margin-bottom: 20px
+  .btn_default
+    max-width: 285px
+  .row
+    +flex
+    +wrap
+    div[class^="col"]
+      padding: 0 5px
+    .col_4
+      width: 33.33%
+      @media (max-width: 991px)
+        width: 100%
+
+    .col_3
+      width: 25%
+
+      @media (max-width: 991px)
+        width: 100%
+
+    .col_12
+      width: 100%
+    .col_6
+      width: 50%
+      @media (max-width: 1200px)
+        width: 100%
+
+
+label
+  color: $black
+  font-size: 16px
+  font-family: $medium
+  width: 100%
+  display: block
+  margin-bottom: 10px
+
+.form_control
+  background: #F5F5F5
+  +border-radius(3px)
+  height: 48px
+  width: 100%
+  border: 0
+  padding-left: 20px
+  font-size: 15px
+  font-family: $regular
+  @media (max-width: 1200px)
+    height: 40px
+    padding-left: 15px
+  @media (max-width: 991px)
+    height: 35px
+    font-size: 14px
+    padding-left: 10px
+  &::-webkit-input-placeholder
+    color: #A0A0A0
+    font-size: 15px
+    font-family: $regular
+    @media (max-width: 991px)
+      font-size: 14px
+  &::-moz-placeholder
+    color: #A0A0A0
+    font-size: 15px
+    font-family: $regular
+    @media (max-width: 991px)
+      font-size: 14px
+  &::-ms-input-placeholder
+    color: #A0A0A0
+    font-size: 15px
+    font-family: $regular
+    @media (max-width: 991px)
+      font-size: 14px
+  &:-moz-placeholder
+    color: #A0A0A0
+    font-size: 15px
+    font-family: $regular
+    @media (max-width: 991px)
+      font-size: 14px
+  &:-ms-input-placeholder
+    color: #A0A0A0
+    font-size: 15px
+    font-family: $regular
+    @media (max-width: 991px)
+      font-size: 14px
+
+textarea.form_control
+  height: 180px
+  padding-top: 15px
+  @media (max-width: 1200px)
+    height: 160px
+  @media (max-width: 991px)
+    height: 150px
+  @media (max-width: 767px)
+    height: 120px
+
+
+
+.field
+  margin-bottom: 20px
+  position: relative
+
+
+.reason_return_item
+  input
+    position: absolute
+    height: 0
+    &:checked
+      + label
+        border: 2px solid #00CBA2
+
+    + label
+      +flex
+      +ai-center
+      +j-center
+      border: 2px solid #F5F5F5
+      background: #F5F5F5
+      +border-radius(3px)
+      width: 100%
+      height: 160px
+      padding: 0 50px
+      font-size: 17px
+      @media (max-width: 1200px)
+        padding: 0 30px
+        height: 140px
+        font-size: 16px
+      @media (max-width: 991px)
+        padding: 0 20px
+        height: 100px
+        font-size: 14px
+        +j-start
+      picture
+        min-width: 45px
+        margin-right: 10px
+
+
+input[type="date"]
+  padding-right: 20px
+  &::-webkit-calendar-picker-indicator
+    background: url(../img/calendar.svg) no-repeat
+
+
+.bootstrap-filestyle
+  position: relative
+  padding-top: 10px
+  .group-span-filestyle
+    .btn
+      position: relative
+      padding-left: 30px
+      &:before
+        +b_a
+        left: 0
+        top: 0
+        bottom: 0
+        margin: auto
+        width: 24px
+        height: 26px
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='26' viewBox='0 0 24 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M20.8752 2.52781C17.7475 -0.599927 12.6541 -0.599927 9.52972 2.52781L0.863703 11.1872C0.807257 11.2436 0.777374 11.32 0.777374 11.3997C0.777374 11.4794 0.807257 11.5557 0.863703 11.6122L2.0889 12.8374C2.1449 12.8931 2.22071 12.9244 2.29974 12.9244C2.37877 12.9244 2.45457 12.8931 2.51058 12.8374L11.1766 4.178C12.2524 3.10222 13.6834 2.51121 15.2041 2.51121C16.7248 2.51121 18.1559 3.10222 19.2284 4.178C20.3041 5.25378 20.8951 6.68484 20.8951 8.20222C20.8951 9.72292 20.3041 11.1507 19.2284 12.2264L10.3963 21.0552L8.96527 22.4862C7.62718 23.8243 5.45237 23.8243 4.11429 22.4862C3.46683 21.8387 3.11155 20.9788 3.11155 20.0624C3.11155 19.146 3.46683 18.286 4.11429 17.6385L12.8766 8.87957C13.0991 8.66042 13.3912 8.53757 13.7034 8.53757H13.7067C14.0188 8.53757 14.3076 8.66042 14.5268 8.87957C14.7492 9.10203 14.8688 9.39421 14.8688 9.70632C14.8688 10.0151 14.7459 10.3073 14.5268 10.5264L7.36487 17.6817C7.30843 17.7382 7.27855 17.8145 7.27855 17.8942C7.27855 17.9739 7.30843 18.0503 7.36487 18.1067L8.59007 19.3319C8.64607 19.3877 8.72188 19.419 8.80091 19.419C8.87994 19.419 8.95575 19.3877 9.01175 19.3319L16.1703 12.1733C16.8311 11.5126 17.193 10.636 17.193 9.703C17.193 8.76999 16.8278 7.89011 16.1703 7.23269C14.8057 5.86804 12.5877 5.87136 11.2231 7.23269L10.3731 8.08601L2.46409 15.9917C1.9273 16.5253 1.5018 17.1602 1.21225 17.8596C0.922711 18.5589 0.774894 19.3088 0.777374 20.0657C0.777374 21.603 1.37835 23.0473 2.46409 24.1331C3.58968 25.2553 5.0639 25.8165 6.53812 25.8165C8.01234 25.8165 9.48655 25.2553 10.6088 24.1331L20.8752 13.8733C22.386 12.3593 23.2227 10.3438 23.2227 8.20222C23.226 6.0573 22.3893 4.04187 20.8752 2.52781Z' fill='%2300A483'/%3e%3c/svg%3e ")
+
+      .buttonText
+        color: $green_dark
+        position: relative
+        @media (max-width: 1200px)
+          font-size: 14px
+        &:before
+          content: 'Не более 5 файлов'
+          position: absolute
+          left: calc(100% + 10px)
+          white-space: nowrap
+          top: 0
+          bottom: 0
+          margin: auto
+          color: #A0A0A0
+          font-size: 15px
+          font-family: $regular
+          @media (max-width: 1200px)
+            font-size: 14px
+          @media (max-width: 767px)
+            font-size: 12px
+
+  .form-control
+    background: none
+    border: 0
+    position: absolute
+
+.text_center
+  text-align: center
+
+.map
+  margin-bottom: 35px
+  @media (max-width: 1200px)
+    margin-bottom: 25px
+  @media (max-width: 991px)
+    margin-bottom: 20px
+
+.c_row
+  +flex
+  +wrap
+  .c_row_item
+    width: 50%
+    @media (max-width: 1200px)
+      width: 100%
+
+    .c_row_item_content
+      width: 100%
+      max-width: 482px
+      color: $black
+
+    .box_title
+      padding-bottom: 12px
+      margin-bottom: 18px
+      padding-top: 30px
+      .title
+        width: 100%
+        +flex
+        +ai-center
+        font-size: 16px
+        font-family: $medium
+        img, svg
+          margin-right: 7px
+        span
+          color: $green_dark
+
+
+.fancybox_modal
+  display: none
+  +border-radius(3px)
+
+  .box_title
+    padding-top: 0
+    padding-bottom: 20px
+    margin-bottom: 20px
+    .title
+      width: 100%
+      font-size: 24px
+      @media (max-width: 1200px)
+        font-size: 22px
+      @media (max-width: 991px)
+        font-size: 20px
+      @media (max-width: 767px)
+        font-size: 18px
+
+
+
+
+.fancybox-content
+  padding: 30px 23px
+  @media (max-width: 767px)
+    padding: 20px 15px
+
+.mb_0
+  margin-bottom: 0 !important
+
+
+.mb_20
+  margin-bottom: 20px

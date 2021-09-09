@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Модальные окна</title>
+    <title>Возврат</title>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -338,30 +338,121 @@
         <div class="container">
           <ul class="breadcrumb">
             <li><a href="#">Главная</a></li>
-            <li><a href="#">Модальные окна</a></li>
+            <li><a href="#">Возврат</a></li>
           </ul>
-          <h1>Модальные окна</h1><a class="btn_default" data-fancybox="checkout" data-src="#contact_management" href="javascript:;">Связаться с руководством</a>
-          <div class="fancybox_modal" id="contact_management">
+          <h1 class="page_title">Возврат</h1>
+          <div class="page_seotext">
             <div class="box_title">
-              <div class="title">Связаться с руководством</div>
+              <div class="title">Условия возврата и обмена</div>
             </div>
-            <form>
+            <div class="desc">
+              <p>1.Потребитель вправе в течение каждым днём всё больше светодиодная лента представляет собой гибкую печатную плату, которая усеяна светодиодами и резисторами. Она предназначается для использования. Светодиодное освещение — одно из перспективных направлений технологий искусственного освещения, основанное на использовании светодиодов в качестве источника света.</p>
+              <p>2.Требование потребителя развитие светодиодного освещения непосредственно связано с достижениями в технологии белых светодиодов. Разработаны так называемые сверхъяркие светодиоды, специально предназначенные для искусственного освещения. В сравнении с обычными лампами накаливания, а также люминесцентными лампами светодиодные источники света обладают многими преимуществами.</p>
+              <p>3.Перечень непродовольственных схемотехнике источников питания, применении качественных компонентов и обеспечении надлежащего теплового режима, срок службы светодиодных систем освещения при сохранении приемлемых.</p>
+              <p>4.При возврате потребителем поизводители светодиодов из-за постоянного обновления и совершенствования продукции не имеют возможности проводить тестирование в реальном времени и указывают прогнозируемый срок службы, используя специальные методики, такие как TM-21 и IESNA LM-80. Большой срок службы в некоторых применениях играет решающую роль. Так, экономия на обслуживании и замене ламп в уличных светильниках зачастую превышает экономию на электроэнергии.</p>
+            </div>
+          </div>
+          <div class="return">
+            <div class="box_title">
+              <div class="title">Заявка на обмен/возврат</div>
+            </div>
+            <form class="return_form">
               <div class="row">
-                <div class="col_12 field">
-                  <label>Ваше имя *</label>
+                <div class="col_4 field">
+                  <label>Номер заказа *</label>
+                  <input class="form_control" type="text" placeholder="Например, 123456789"/>
+                </div>
+                <div class="col_4 field">
+                  <label>Дата заказа *</label>
+                  <input class="form_control" type="date" placeholder="ДД.ММ.ГГГГ"/>
+                </div>
+                <div class="col_4 field">
+                  <label>Артикул товара *</label>
+                  <input class="form_control" type="text" placeholder="Например, 123456789"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col_4 field">
+                  <label>Количество *</label>
+                  <input class="form_control" type="text" placeholder="Например, 10"/>
+                </div>
+                <div class="col_4 field">
+                  <label>Email *</label>
+                  <input class="form_control" type="text" placeholder="email@example.com"/>
+                </div>
+                <div class="col_4 field">
+                  <label>Телефон *</label>
+                  <input class="form_control" type="text" placeholder="+375(_ _) _ _ _ _ _ _ _ "/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col_4 field">
+                  <label>Фамилия *</label>
+                  <input class="form_control" type="text" placeholder="Например, Олегов"/>
+                </div>
+                <div class="col_4 field">
+                  <label>Имя *</label>
                   <input class="form_control" type="text" placeholder="Например, Олег"/>
                 </div>
-                <div class="col_12 field">
-                  <label>Ваш email *</label>
-                  <input class="form_control" type="text" placeholder="example@gmail.com"/>
+                <div class="col_4 field">
+                  <label>Отчество *</label>
+                  <input class="form_control" type="text" placeholder="Например, Олегович"/>
                 </div>
-                <div class="col_12 field mb_0">
-                  <label>Причина обращения *</label>
-                  <textarea class="form_control" placeholder="Пожалуйста, опишите как можно подробнее"></textarea>
-                </div>
+              </div>
+              <div class="row">
                 <div class="col_12">
-                  <p class="mb_20">Поля обозначенные (*) - обязательны для заполнения</p>
-                  <button class="btn_default" type="submit">Отправить сообщение</button>
+                  <label>Причина возврата *</label>
+                </div>
+                <div class="row">
+                  <div class="col_3 field">
+                    <div class="reason_return_item">
+                      <input type="radio" name="reason_return" id="radio_10"/>
+                      <label for="radio_10">
+                        <picture><img src="img/return/0.svg"/></picture><span>Товар не соответствует описанию</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col_3 field">
+                    <div class="reason_return_item">
+                      <input type="radio" name="reason_return" id="radio_11"/>
+                      <label for="radio_11">
+                        <picture><img src="img/return/1.svg"/></picture><span>Товар неисправен/ поломан</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col_3 field">
+                    <div class="reason_return_item">
+                      <input type="radio" name="reason_return" id="radio_12"/>
+                      <label for="radio_12">
+                        <picture><img src="img/return/2.svg"/></picture><span>Гарантийный случай в процессе эксплуатации</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col_3 field">
+                    <div class="reason_return_item">
+                      <input type="radio" name="reason_return" id="radio_13"/>
+                      <label for="radio_13">
+                        <picture><img src="img/return/3.svg"/></picture><span>Иная причина</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col_12 field">
+                  <label>Подробное описание</label>
+                  <textarea class="form_control" placeholder="Более детально опишите ситуацию"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col_12 field">
+                  <input class="file" type="file"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col_12">
+                  <p>Поля обозначенные (*) - обязательны для заполнения</p>
+                  <button class="btn_default" type="submit">Отправить заявку</button>
                 </div>
               </div>
             </form>

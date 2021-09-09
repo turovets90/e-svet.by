@@ -1,18 +1,34 @@
-.page_content
-    .container
-        ul.breadcrumb
-            li
-                a(href="#") Главная
+main
+    .page_content
+        .container
+            ul.breadcrumb
+                li
+                    a(href="#") Главная
 
-            li
-                a(href="#") #{page.title}
+                li
+                    a(href="#") #{page.title}
 
-        h1 #{page.title}
+            h1 #{page.title}
 
-        button.btn_default.mb-5(data-toggle="modal" data-target="#registration") Регистрация
-        button.btn_default.mb-5(data-toggle="modal" data-target="#order_call") Заказать звонок
-        button.btn_default.mb-5(data-toggle="modal" data-target="#subscribe") Подписаться на прайс
+            a.btn_default(data-fancybox="checkout" data-src="#contact_management" href="javascript:;") Связаться с руководством
 
+            .fancybox_modal#contact_management
+                .box_title
+                    .title Связаться с руководством
+                form
+                    .row
+                        .col_12.field
+                            label Ваше имя *
+                            input.form_control(type="text" placeholder="Например, Олег")
+                        .col_12.field
+                            label Ваш email *
+                            input.form_control(type="text" placeholder="example@gmail.com")
+                        .col_12.field.mb_0
+                            label Причина обращения *
+                            textarea.form_control(placeholder="Пожалуйста, опишите как можно подробнее")
+                        .col_12
+                            p.mb_20 Поля обозначенные (*) - обязательны для заполнения
+                            button.btn_default(type="submit") Отправить сообщение
 
 
 
