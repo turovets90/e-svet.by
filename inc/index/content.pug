@@ -29,15 +29,27 @@ main
             .products_list.m_products_slider
                 -for(var p=1;p<=6;p++)
                     .product_item
-                        .product_item_content
-                            .img_thumbnail
-                                .label Хит
-                                a(href="#")
-                                    img(src="img/product_item.png")
-                            .articul Артикул: 12389234
-                            a.product_name(href="#") Блок питания Venom Негерметичный 12V 15Вт
-                            .price 148 BYN
-                            a.btn_default(href="#") В корзину
+                       .product_item_content
+                            .c_left
+                               .img_thumbnail
+                                   .label Хит
+                                   a(href="#")
+                                       img(src="img/product_item.png")
+                            .c_center
+                                .articul Артикул: 12389234
+                                a.product_name(href="#") Блок питания Venom Негерметичный 12V 15Вт
+                                .availability
+                                    if p === 3 || p === 5
+                                        span.red Под заказ
+                                    else
+                                        span.green В наличии
+                                .price 148 BYN/шт
+                            .c_right
+                                .amount
+                                    span.down -
+                                    input(type="text" value="1")
+                                    span.up +
+                                a.btn_default(href="#") В корзину
 
         .m_articles
             .box_title
