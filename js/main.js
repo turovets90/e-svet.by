@@ -318,6 +318,9 @@ $(document).ready(function(){
     $(window).resize();
 
 
+    $(".phone").mask("+375 (99) 999-99-99");
+
+
 });
 
 
