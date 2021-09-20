@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    /* перевод картинки svg в код */
+    /* перевод картинки svg в код
     $('.icon img, img.icon').each(function(){
         var $img = $(this);
         var imgClass = $img.attr('class');
@@ -16,7 +16,7 @@ $(document).ready(function(){
             }
             $img.replaceWith($svg);
         }, 'xml');
-    });
+    });*/
 
 
     $('.btn_group .item').each(function(){

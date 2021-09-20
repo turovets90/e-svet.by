@@ -553,6 +553,7 @@ body
       &:hover, &:focus
         span
           //color: $green
+
       @media (max-width: 1200px)
         +wrap
 
@@ -565,6 +566,7 @@ body
           max-width: 100%
           font-size: 12px
           line-height: 1.2
+          padding-top: 10px
 
       img
         margin-right: 25px
@@ -1016,6 +1018,9 @@ main
   +flex
   +wrap
   &.m_products_slider
+    @media (max-width: 575px)
+      .slick-arrow
+        top: 45%
     &:not(.slick-slider)
       .product_item
         width: 25%

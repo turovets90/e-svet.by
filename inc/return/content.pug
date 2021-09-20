@@ -25,33 +25,33 @@ main
                     .row
                         .col_4.field
                             label Номер заказа *
-                            input.form_control(type="text" placeholder="Например, 123456789")
+                            input.form_control(type="text" placeholder="Например, 123456789" required)
                         .col_4.field
                             label Дата заказа *
-                            input.form_control(type="date" placeholder="ДД.ММ.ГГГГ")
+                            input.form_control(type="date" placeholder="ДД.ММ.ГГГГ" required)
                         .col_4.field
                             label Артикул товара *
-                            input.form_control(type="text" placeholder="Например, 123456789")
+                            input.form_control(type="text" placeholder="Например, 123456789" required)
                     .row
                         .col_4.field
                             label Количество *
-                            input.form_control(type="text" placeholder="Например, 10")
+                            input.form_control(type="text" placeholder="Например, 10" required)
                         .col_4.field
                             label Email *
-                            input.form_control(type="text" placeholder="email@example.com")
+                            input.form_control(type="email" placeholder="email@example.com" required)
                         .col_4.field
                             label Телефон *
-                            input.form_control.phone(type="text" placeholder="+375(_ _) _ _ _ _ _ _ _ ")
+                            input.form_control.phone(type="text" placeholder="+375(_ _) _ _ _ _ _ _ _ " required)
                     .row
                         .col_4.field
                             label Фамилия *
-                            input.form_control(type="text" placeholder="Например, Олегов")
+                            input.form_control(type="text" placeholder="Например, Олегов" required)
                         .col_4.field
                             label Имя *
-                            input.form_control(type="text" placeholder="Например, Олег")
+                            input.form_control(type="text" placeholder="Например, Олег" required)
                         .col_4.field
                             label Отчество *
-                            input.form_control(type="text" placeholder="Например, Олегович")
+                            input.form_control(type="text" placeholder="Например, Олегович" required)
                     -var checkbox=['Товар не соответствует описанию','Товар неисправен/ поломан','Гарантийный случай в процессе эксплуатации','Иная причина'];
                     .row
                         .col_12
