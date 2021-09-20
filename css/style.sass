@@ -372,7 +372,8 @@ body
       +border-radius(5px)
       display: none
       @media (max-width: 575px)
-        right: -80px
+        right: 0
+        min-width: 220px
       ul
         li
           +flex
@@ -551,7 +552,7 @@ body
       text-decoration: none
       &:hover, &:focus
         span
-          color: $green
+          //color: $green
       @media (max-width: 1200px)
         +wrap
 
@@ -1297,6 +1298,11 @@ main
   .article_item
     width: 33.33%
     padding: 5px
+    &:hover
+      .article_item_content
+        background: #f5f5f5
+        .article_name
+          font-family: $bold
     .article_item_content
       background: #F8F8F8
       +border-radius(3px)
@@ -1408,6 +1414,17 @@ footer
   .f_row
     +flex
     +wrap
+    .column
+      @media (max-width: 1200px)
+        margin-bottom: 30px
+      &.m_hide
+        @media (max-width: 767px)
+          display: none
+      @media (min-width: 768px)
+        margin-right: 10%
+        &:last-child
+          margin-right: 0
+
     .col_left
       width: 75%
       +flex
