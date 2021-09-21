@@ -20,7 +20,7 @@ main
                         .s_catalog_title Категории товаров
                         ul.menu
                             for s_cat_item,  index in s_cat
-                                li
+                                li(class=(index===2?'act':''))
                                     a(href="#")=s_cat_item
                                     span.arrow
                                     ul.sub_menu
