@@ -58,13 +58,23 @@ main
                             label Причина возврата *
                         .row
                             for ch,  index in checkbox
-                                .col_3.field
-                                    .reason_return_item
-                                        input(type="radio" name="reason_return" id="radio_1"+index+"")
-                                        label(for="radio_1"+index+"")
-                                            picture
-                                                img(src="img/return/"+index+".svg")
-                                            span=ch
+                                if index===0
+                                    .col_3.field
+                                        .reason_return_item
+                                            input(type="radio" name="reason_return" id="radio_1" + index + "" checked)
+                                            label(for="radio_1" + index + "")
+                                                picture
+                                                    img(src="img/return/" + index + ".svg")
+                                                span=ch
+                                else
+
+                                    .col_3.field
+                                        .reason_return_item
+                                            input(type="radio" name="reason_return" id="radio_1"+index+"")
+                                            label(for="radio_1"+index+"")
+                                                picture
+                                                    img(src="img/return/"+index+".svg")
+                                                span=ch
                     .row
                         .col_12.field
                             label Подробное описание
