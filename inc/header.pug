@@ -14,7 +14,7 @@ header
                     span Меню
                 ul.nav.c_nav
                     for c_item, index in c_menu
-                        li
+                        li(class=(index===1?'current':''))
                             a(href="#")=c_item
                             span.arrow
                             ul.sub_menu
@@ -163,7 +163,7 @@ header
                         span.arrow
                     ul.menu
                         for m_item, index in c_menu
-                            li
+                            li(class=(index===1?'current':''))
                                 a(href="#")=m_item
                                 ul.sub_menu
                                     -for(var sb=1;sb<=8;sb++)
@@ -178,9 +178,11 @@ header
                     a(href="#")
                         picture
                             img(src="img/cart.svg")
+                            .count 2
                         .text
+
                             strong Корзина
-                            sapn.count 20 товаров
+                            sapn.cart_price 138 BYN
 
 
 
