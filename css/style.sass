@@ -586,6 +586,9 @@ body
       padding-left: 20px
     @media (max-width: 991px)
       width: 75%
+    .col_right
+      +flex
+      +ai-center
 
 
 
@@ -611,7 +614,7 @@ body
 
 
       picture
-        display: inline-block
+        +flex
         margin-right: 12px
         width: 25px
         min-width: 22px
@@ -993,6 +996,7 @@ main
 
 
 .page_content
+  height: 100%
   .box_title
     .title
       width: 100%
@@ -2444,3 +2448,38 @@ input[type="date"]
 
 .bootstrap-filestyle
   margin-bottom: 10px
+
+
+.content_404
+  @media (min-width: 992px)
+    min-height: 400px
+    +flex
+    +ai-center
+
+  @media (max-width: 991px)
+    padding-top: 30px
+  .title_404
+    font-size: 42px
+    color: $black
+    line-height: 1.2
+    font-weight: bold
+    text-transform: uppercase
+    @media (max-width: 1200px)
+      font-size: 35px
+    @media (max-width: 991px)
+      font-size: 30px
+    @media (max-width: 767px)
+      font-size: 25px
+    @media (max-width: 575px)
+      font-size: 20px
+    a
+      color: $green
+
+
+
+
+.m_navbar
+  .d_flex
+    +ai-center
+  .mm_btn, .m_logo, .m_logo a, .btn_group a, .btn_group .m_cart, .btn_group button
+    +flex
