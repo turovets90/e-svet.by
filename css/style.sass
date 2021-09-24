@@ -446,6 +446,8 @@ body
       li
         font-size: 15px
         margin-bottom: 8px
+        &:last-child
+          margin-bottom: 0
 
         &:nth-child(3)
           +ai-start
@@ -599,7 +601,9 @@ body
     li
       +flex
       +ai-center
-      margin-bottom: 5px
+      margin-bottom: 6px
+      &:last-child
+        margin-bottom: 0
       span, a
         color: $black
         font-size: 15px
