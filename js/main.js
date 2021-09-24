@@ -312,11 +312,21 @@ $(document).ready(function(){
 
 
     $(window).resize(function(){
-        var header_height = $('.b_header').outerHeight();
-        $('.c_menu .bg_dark').css({'margin-top': header_height+'px'});
+        var b_header_height = $('.b_header').outerHeight();
+        var header_height = $('header').outerHeight();
+        $('.c_menu .bg_dark').css({'margin-top': b_header_height+'px'});
+        $('main').css({'margin-top': header_height+'px'});
+
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > header_height) {
+                $('header').addClass('fixed');
+            } else {
+                $('header').removeClass('fixed');
+            }
+        });
+
     });
     $(window).resize();
-
 
     $(".phone").mask("+375 (99) 999-99-99");
 
